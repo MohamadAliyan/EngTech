@@ -25,15 +25,15 @@
 The easiest way to get started is to install the [NuGet package](https://www.nuget.org/packages/Clean.Architecture.Solution.Template) and run `dotnet new ca-sln`:
 
 1. Install the latest [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-2. Navigate to `src/EShop.Api` and launch the project using `dotnet run`
-3. go to http://localhost:64708/swagger
+2. Navigate to `src/Api` and launch the project using `dotnet run` http://localhost:5069/swagger
+3. By IIS Express go to http://localhost:64708/swagger
 
 
 ### Database Configuration
 
 The template is configured (SQL Server).
 
-If you would like to use SQL Server, you will need to update **WebUI/appsettings.json** as follows:
+If you would like to use SQL Server, you will need to update **api/appsettings.json** as follows:
 
 
 
@@ -47,7 +47,7 @@ To use `dotnet-ef` for your migrations first ensure that "UseInMemoryDatabase" i
 Then, add the following flags to your command (values assume you are executing from repository root)
 
 * `--project src/Infrastructure` (optional if in this folder)
-* `--startup-project src/EShop.Api`
+* `--startup-project src/Api`
 * `--output-dir Persistence/Migrations`
 
 For example, to add a new migration from the root folder:
@@ -68,7 +68,7 @@ This layer contains all application logic. It is dependent on the domain layer, 
 
 This layer contains classes for accessing external resources such as file systems, web services, smtp, and so on. These classes should be based on interfaces defined within the application layer.
 
-### WebUI
+### Api
 
 This layer is a  ASP.NET Core 7. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
 
