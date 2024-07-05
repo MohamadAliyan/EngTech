@@ -52,7 +52,7 @@ Then, add the following flags to your command (values assume you are executing f
 
 For example, to add a new migration from the root folder:
 
- `dotnet ef migrations add "SampleMigration" --project src\Infrastructure --startup-project src\EShop.Api --output-dir Persistence\Migrations`
+ `dotnet ef migrations add "SampleMigration" --project src\Infrastructure --startup-project src\Api --output-dir Persistence\Migrations`
 
 ## Overview
 
